@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Novo chamado </title>
+</head>
+<body>
+
+	<form action="cadastrarchamado.php" method="POST">
+        <h1>Novo chamado</h1>
+        <hr>
+        Usuario:
+        <input type="text" name="nome" required />
+		<br/><br/>
+        
+		<input type="hidden" name="tipo" value="1" /> <!--cadastrar-->
+				
+		Unidade:
+		<select name="unidade" required />
+			<option value="1" selected> UPA São Benedito </option>
+			<option value="2"> UPA Parque do Mirante </option>
+			<option value="3"> Centro Administrativo </option>
+		</select>
+		<br/><br/>
+		
+        Descrição:<br/>
+        <textarea name="descricao" required cols="80" rows="6" maxlength="230"></textarea>
+		<br/><br/><br/>
+        <input type="submit" value="GRAVAR" />
+        <hr>
+    </form>
+
+</body>
+</html>

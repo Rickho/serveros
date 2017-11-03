@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> PAINEL DE CHAMADOS </title>
+</head>
+<body>
+
+	<h1>CHAMADOS ABERTOS</h1>
+    <hr>
+	
+	<table border="1" width="100%">
+    <tr>
+        <th>CHAMADO</th>
+        <th>UNIDADE</th>
+        <th>DESCRICAO</th>
+        <th>ACOES</th>
+    </tr>
+	
+     <?php
+    
+		include_once 'conexao.php';    
+	
+		try {
+			$stmt = $con->prepare("SELECT * FROM PROVIDENCIAS");
+				if ($stmt->execute()) {
+					while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+						echo "<tr>";
+						
+						echo "<td>".$row->id_chamado."</td><td>".$row->descricao."</td><td>".$row->id_pessoa
+						."</td><td><center><a href=\"\">[Alterar]</a>"
+						."<a href=\"\">[Excluir]</a></center></td>";
+						
+						echo "</tr>";
+					}
+				} else {
+					echo "Erro: Não foi possível recuperar os dados do banco de dados";
+				}
+		} catch (PDOException $erro) {
+			echo "Erro: ".$erro->getMessage();
+		}
+    ?>	
+		
+	<hr>
+    
+	<a href="formularionovochamado.html">Novo chamado</a>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Cadastro de usuário </title>
+</head>
+<body>
+
+	<form action="cadastrarusuario.php" method="POST">
+        <h1>Cadastro de usuário</h1>
+        <hr>
+        Nome:
+        <input type="text" name="nome" required />
+		<br/><br/>
+        E-mail:
+        <input type="text" name="email" required />
+		<br/><br/>
+        Contato:
+        <input type="text" name="contato" required />
+		<br/><br/>
+		Senha:
+		<input type="password" name="senha" required />
+		<br/><br/>
+		<!-- Confirma senha:
+		<input type="password" name="confirmasenha" required /> 
+		<br/><br/>-->
+		Tipo:
+		<select name="tipo" required />
+			<option value="1" selected> Usuário </option>
+			<option value="2"> Técnico </option>
+			<option value="3"> Administrador </option>
+		</select>
+		
+		<br/><br/><br/>
+        <input type="submit" value="GRAVAR" />
+        <input type="reset" value="LIMPAR CAMPOS" />
+        <hr>
+    </form>
+
+</body>
+</html>
